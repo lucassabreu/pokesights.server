@@ -1,0 +1,443 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns='http://www.opengis.net/kml/2.2'>
+	<Document>
+		<name>Pokemon GO Joinville - Avistamentos</name>
+		<description><![CDATA[Mapa de Joinville com Avisamentos de Pokemon GO]]></description>
+		<Folder>
+			<name>Não Categorizado</name>
+			<Placemark>
+				<name>Gastly</name>
+				<description><![CDATA[<img src="https://lh5.googleusercontent.com/proxy/at3qVKEoJqVelrrDbNTaPElh-nQZ5njpToIWPe2kb1cSU2QgukXJ_2ej44_3AziVHMG1KmOE4lTlPOwDHX4I6_0lQJZN36oh2vDPW6QY_GVA" height="200" width="auto" /><br><br>Número Pokemon: 092<br>Número Avistamentos: 2]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>092</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>2.0</value>
+					</Data>
+					<Data name='gx_media_links'>
+						<value>https://lh5.googleusercontent.com/proxy/at3qVKEoJqVelrrDbNTaPElh-nQZ5njpToIWPe2kb1cSU2QgukXJ_2ej44_3AziVHMG1KmOE4lTlPOwDHX4I6_0lQJZN36oh2vDPW6QY_GVA</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.8522315,-26.2649783,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Diglett</name>
+				<description><![CDATA[<img src="https://lh3.googleusercontent.com/proxy/U-xDoPfXx7IJNnpKtp6T0eQlq5AOzruQMEBHFZ1AoM4fK9pDhFHLHq9wQaBbo11AYsuQCCjeLy91qFjg4wAS9nHFT1MzGAMJjb-uPYJsPVq3" height="200" width="auto" /><br><br>Número Pokemon: 050<br>Número Avistamentos: 2]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>050</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>2.0</value>
+					</Data>
+					<Data name='gx_media_links'>
+						<value>https://lh3.googleusercontent.com/proxy/U-xDoPfXx7IJNnpKtp6T0eQlq5AOzruQMEBHFZ1AoM4fK9pDhFHLHq9wQaBbo11AYsuQCCjeLy91qFjg4wAS9nHFT1MzGAMJjb-uPYJsPVq3</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.8516173,-26.2646705,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Koffing</name>
+				<description><![CDATA[<img src="https://lh5.googleusercontent.com/proxy/fZErE76vkHT-deYTTF0ZwRHgQVLm5XlO-i74Ecaox9e7oLGN1NCv4lK7M0cmqdJKyr0QMGvWxMJHHfwg6RXzhL8DS8OHQSsmLAj1Oro2wrdC" height="200" width="auto" /><br><br>Número Pokemon: 109<br>Número Avistamentos: 2]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>109</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>2.0</value>
+					</Data>
+					<Data name='gx_media_links'>
+						<value>https://lh5.googleusercontent.com/proxy/fZErE76vkHT-deYTTF0ZwRHgQVLm5XlO-i74Ecaox9e7oLGN1NCv4lK7M0cmqdJKyr0QMGvWxMJHHfwg6RXzhL8DS8OHQSsmLAj1Oro2wrdC</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.8517809,-26.26519,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Goldeen</name>
+				<description><![CDATA[<img src="https://lh3.googleusercontent.com/proxy/WnYTybdiNnyjtrjpiW5nVmGbvK9svSpeUYXQSHFmLC1KCsHqOo0ic4kWy9n2ECFceWxv23yF0VdLrszPj0JRGbjuRNX0k9WikkPCFN8DKb2S" height="200" width="auto" /><br><br>Número Pokemon: 118<br>Número Avistamentos: 2]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>118</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>2.0</value>
+					</Data>
+					<Data name='gx_media_links'>
+						<value>https://lh3.googleusercontent.com/proxy/WnYTybdiNnyjtrjpiW5nVmGbvK9svSpeUYXQSHFmLC1KCsHqOo0ic4kWy9n2ECFceWxv23yF0VdLrszPj0JRGbjuRNX0k9WikkPCFN8DKb2S</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.8524675,-26.2657095,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Tentacruel</name>
+				<description><![CDATA[<img src="https://lh5.googleusercontent.com/proxy/tUFEXXxnAxN1YqLtGDPcEHWiXldH9THH5LndBwdwA1d9UXOFZMV2ku4e9TM3xAZk8xbIpUuenQBrD5Pcr8V0cjmLIFOa4uSYNEA4byCcQkLM" height="200" width="auto" /><br><br>Número Pokemon: 073<br>Número Avistamentos: 2]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>073</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>2.0</value>
+					</Data>
+					<Data name='gx_media_links'>
+						<value>https://lh5.googleusercontent.com/proxy/tUFEXXxnAxN1YqLtGDPcEHWiXldH9THH5LndBwdwA1d9UXOFZMV2ku4e9TM3xAZk8xbIpUuenQBrD5Pcr8V0cjmLIFOa4uSYNEA4byCcQkLM</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.8435733,-26.3015089,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Staryu</name>
+				<description><![CDATA[<img src="https://lh3.googleusercontent.com/proxy/SypsgfBg8lQZvmnshE9yqTAyF2L4QcupNt7KTbVvq6D9pL-2Nk6XkLMzhVzD-20fhZpR4ngRQXZMiN_OnuhL3WrmN5-NMHw7Cnqr-V4s_145" height="200" width="auto" /><br><br>Número Pokemon: 120<br>Número Avistamentos: 2]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>120</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>2.0</value>
+					</Data>
+					<Data name='gx_media_links'>
+						<value>https://lh3.googleusercontent.com/proxy/SypsgfBg8lQZvmnshE9yqTAyF2L4QcupNt7KTbVvq6D9pL-2Nk6XkLMzhVzD-20fhZpR4ngRQXZMiN_OnuhL3WrmN5-NMHw7Cnqr-V4s_145</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.85221,-26.2654017,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Scyther</name>
+				<description><![CDATA[<img src="https://lh4.googleusercontent.com/proxy/m12C_tTJRwjAX9Av8qFtXeC41EyVd_JaSOIBGkNIbVTpN4oc1tIPk69FFDJoKck4TWrV1poaexfJKPoZqyfePpBjVdnfCZEZK2R5yWidV7co" height="200" width="auto" /><br><br>Número Pokemon: 123<br>Número Avistamentos: 1]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>123</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>1.0</value>
+					</Data>
+					<Data name='gx_media_links'>
+						<value>https://lh4.googleusercontent.com/proxy/m12C_tTJRwjAX9Av8qFtXeC41EyVd_JaSOIBGkNIbVTpN4oc1tIPk69FFDJoKck4TWrV1poaexfJKPoZqyfePpBjVdnfCZEZK2R5yWidV7co</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.8516736,-26.2655556,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Horsea</name>
+				<description><![CDATA[Número Pokemon: 116<br>Número Avistamentos: 2]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>116</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>2.0</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.8513947,-26.2651708,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Abra</name>
+				<description><![CDATA[<img src="https://lh4.googleusercontent.com/proxy/Z7nYBeV9J7kqWsUswcYpYFbLnMPXTQIuVukhX4CI5aD9iIc7UvY5x8EhFManix2EeDZIjh9tfQ-cD-fzmkJIY9b45lyrLq8oR1a1NH38Qmem" height="200" width="auto" /><br><br>Número Pokemon: 063<br>Número Avistamentos: 2]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>063</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>2.0</value>
+					</Data>
+					<Data name='gx_media_links'>
+						<value>https://lh4.googleusercontent.com/proxy/Z7nYBeV9J7kqWsUswcYpYFbLnMPXTQIuVukhX4CI5aD9iIc7UvY5x8EhFManix2EeDZIjh9tfQ-cD-fzmkJIY9b45lyrLq8oR1a1NH38Qmem</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.8519526,-26.2655171,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Sandshrew</name>
+				<description><![CDATA[<img src="https://lh4.googleusercontent.com/proxy/pdx3a6wH06dizeLt96Qa4J2FrpBPXmOja1z3tKK7MqBfd4_kX68_--nz-U8a-Xn6VPjXTet2s_AgAf8HHGyhHTPeDGAwaYmInx876SMYfAZR" height="200" width="auto" /><br><br>Número Pokemon: 027<br>Número Avistamentos: 1]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>027</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>1.0</value>
+					</Data>
+					<Data name='gx_media_links'>
+						<value>https://lh4.googleusercontent.com/proxy/pdx3a6wH06dizeLt96Qa4J2FrpBPXmOja1z3tKK7MqBfd4_kX68_--nz-U8a-Xn6VPjXTet2s_AgAf8HHGyhHTPeDGAwaYmInx876SMYfAZR</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.842082,-26.3057168,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Nidorino</name>
+				<description><![CDATA[<img src="https://lh6.googleusercontent.com/proxy/QhZz3piZfoqJXXbp7unA0HlHenn5bn-WitttGaWG3gGHobeF_KRQB-uGXG798kHCk48mHkUBz0xfOwZ1vngSsYlVj_H9Ypyr3sSvligN9ey9" height="200" width="auto" /><br><br>Número Pokemon: 033<br>Número Avistamentos: 1]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>033</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>1.0</value>
+					</Data>
+					<Data name='gx_media_links'>
+						<value>https://lh6.googleusercontent.com/proxy/QhZz3piZfoqJXXbp7unA0HlHenn5bn-WitttGaWG3gGHobeF_KRQB-uGXG798kHCk48mHkUBz0xfOwZ1vngSsYlVj_H9Ypyr3sSvligN9ey9</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.8389492,-26.3047935,0.0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Incomum</name>
+			<Placemark>
+				<name>Psyduck</name>
+				<description><![CDATA[<img src="https://lh4.googleusercontent.com/proxy/xv7LXT2vAZ5b1r3uIpQbwScv2_8DqxPO0pz6s50xEnfSaeWUe7bWxuHHokA5bW2bRT8AUIp4npjLEBuYnFAi7vonq4xegK4yKP6y7AgGOUo1" height="200" width="auto" /><br><br>Número Pokemon: 054<br>Número Avistamentos: 3]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>054</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>3.0</value>
+					</Data>
+					<Data name='gx_media_links'>
+						<value>https://lh4.googleusercontent.com/proxy/xv7LXT2vAZ5b1r3uIpQbwScv2_8DqxPO0pz6s50xEnfSaeWUe7bWxuHHokA5bW2bRT8AUIp4npjLEBuYnFAi7vonq4xegK4yKP6y7AgGOUo1</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.849104,-26.3122519,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Psyduck</name>
+				<description><![CDATA[<img src="https://lh4.googleusercontent.com/proxy/xv7LXT2vAZ5b1r3uIpQbwScv2_8DqxPO0pz6s50xEnfSaeWUe7bWxuHHokA5bW2bRT8AUIp4npjLEBuYnFAi7vonq4xegK4yKP6y7AgGOUo1" height="200" width="auto" /><br><br>Número Pokemon: 054<br>Número Avistamentos: 20]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>054</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>20.0</value>
+					</Data>
+					<Data name='gx_media_links'>
+						<value>https://lh4.googleusercontent.com/proxy/xv7LXT2vAZ5b1r3uIpQbwScv2_8DqxPO0pz6s50xEnfSaeWUe7bWxuHHokA5bW2bRT8AUIp4npjLEBuYnFAi7vonq4xegK4yKP6y7AgGOUo1</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.8439596,-26.3012637,0.0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Raro</name>
+			<Placemark>
+				<name>Magmar</name>
+				<description><![CDATA[<img src="https://lh3.googleusercontent.com/proxy/4JFZ-CEKRYJNJ1hEtjqBxb7oAPKJbvXKkSm5bZcg9EQqSB4L5Dc0ZARENEvclNcb5tfLQMFNNp2X85E6WCfU-H_8yhFYYkc-IeuaX4AgzCAb" height="200" width="auto" /><br><br>Número Pokemon: 126<br>Número Avistamentos: 1]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>126</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>1.0</value>
+					</Data>
+					<Data name='gx_media_links'>
+						<value>https://lh3.googleusercontent.com/proxy/4JFZ-CEKRYJNJ1hEtjqBxb7oAPKJbvXKkSm5bZcg9EQqSB4L5Dc0ZARENEvclNcb5tfLQMFNNp2X85E6WCfU-H_8yhFYYkc-IeuaX4AgzCAb</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.849721,-26.2831705,0.0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Especial</name>
+			<Placemark>
+				<name>Bulbasaur</name>
+				<description><![CDATA[<img src="https://lh3.googleusercontent.com/proxy/FIOU6P-3ewsn3zFbQHrh1SmbwPdgl0h-K2puXu1-SKIBFXLQ-mz1ONNZ4SuyHdPTfjYSKxQ1cvyWvADWNzfZzYxTyk_YA2EfR-ZsiTAA0vJZ" height="200" width="auto" /><br><br>Número Pokemon: 001<br>Número Avistamentos: 1]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>001</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>1.0</value>
+					</Data>
+					<Data name='gx_media_links'>
+						<value>https://lh3.googleusercontent.com/proxy/FIOU6P-3ewsn3zFbQHrh1SmbwPdgl0h-K2puXu1-SKIBFXLQ-mz1ONNZ4SuyHdPTfjYSKxQ1cvyWvADWNzfZzYxTyk_YA2EfR-ZsiTAA0vJZ</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.8484925,-26.2707509,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Bulbasaur</name>
+				<description><![CDATA[<img src="https://lh3.googleusercontent.com/proxy/FIOU6P-3ewsn3zFbQHrh1SmbwPdgl0h-K2puXu1-SKIBFXLQ-mz1ONNZ4SuyHdPTfjYSKxQ1cvyWvADWNzfZzYxTyk_YA2EfR-ZsiTAA0vJZ" height="200" width="auto" /><br><br>Número Pokemon: 001<br>Número Avistamentos: 1]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>001</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>1.0</value>
+					</Data>
+					<Data name='gx_media_links'>
+						<value>https://lh3.googleusercontent.com/proxy/FIOU6P-3ewsn3zFbQHrh1SmbwPdgl0h-K2puXu1-SKIBFXLQ-mz1ONNZ4SuyHdPTfjYSKxQ1cvyWvADWNzfZzYxTyk_YA2EfR-ZsiTAA0vJZ</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.8008404,-26.3210561,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Charmander</name>
+				<description><![CDATA[<img src="https://lh3.googleusercontent.com/proxy/5a7o62KBXEgh-9KfPt6FTkBOR8n4-6L2zYhwQLiQlVRyM2saw2s4kzb7LU742Qh8cQI8lYZP024KpoV9rtGvNAXi558cPBB5D6SAnkxHvKrQ" height="200" width="auto" /><br><br>Número Pokemon: 004<br>Número Avistamentos: 1]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>004</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>1.0</value>
+					</Data>
+					<Data name='gx_media_links'>
+						<value>https://lh3.googleusercontent.com/proxy/5a7o62KBXEgh-9KfPt6FTkBOR8n4-6L2zYhwQLiQlVRyM2saw2s4kzb7LU742Qh8cQI8lYZP024KpoV9rtGvNAXi558cPBB5D6SAnkxHvKrQ</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.8437986,-26.3014368,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Pikachu</name>
+				<description><![CDATA[<img src="https://lh5.googleusercontent.com/proxy/ieXbE7pi6tjZVm2D1qpspNiXVjll2DyZxp5KKKqokSRcVVoQf5pnN6DEOOA6twX0NSRmGcoMx-8NkTlLKXq9ftrlb4R75Zm4uWMxWbIb_yBW" height="200" width="auto" /><br><br>Número Pokemon: 025<br>Número Avistamentos: 1]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>025</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>1.0</value>
+					</Data>
+					<Data name='gx_media_links'>
+						<value>https://lh5.googleusercontent.com/proxy/ieXbE7pi6tjZVm2D1qpspNiXVjll2DyZxp5KKKqokSRcVVoQf5pnN6DEOOA6twX0NSRmGcoMx-8NkTlLKXq9ftrlb4R75Zm4uWMxWbIb_yBW</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.8440052,-26.2937469,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Doduo</name>
+				<description><![CDATA[<img src="https://lh5.googleusercontent.com/proxy/7ES36x1PCylReWo4dLQbFbDV_GBKmjNuDXyWDR4YqxHKp3A6bSCu_stcBeZwWw7wpWt0wUDBb8B3LesGbFae1dJUGi1KYdgHbwwAaYBbDh8k" height="200" width="auto" /><br><br>Número Pokemon: 084<br>Número Avistamentos: 1]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>084</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>1.0</value>
+					</Data>
+					<Data name='gx_media_links'>
+						<value>https://lh5.googleusercontent.com/proxy/7ES36x1PCylReWo4dLQbFbDV_GBKmjNuDXyWDR4YqxHKp3A6bSCu_stcBeZwWw7wpWt0wUDBb8B3LesGbFae1dJUGi1KYdgHbwwAaYBbDh8k</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.8486427,-26.2708182,0.0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Épicos</name>
+			<Placemark>
+				<name>Dratini</name>
+				<description><![CDATA[<img src="https://lh5.googleusercontent.com/proxy/bey5bBG_uP3BXNgjrCY_t7lBvEXLGaqfNAAHu_PvJ9AMRr4QFPRgsixX_4SfIjekDYgqitQTA-XrlemvHL-OeJyX6LnCqTL_0Ra9K0lG87Xz" height="200" width="auto" /><br><br>Número Pokemon: 147<br>Número Avistamentos: 2]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>147</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>2.0</value>
+					</Data>
+					<Data name='gx_media_links'>
+						<value>https://lh5.googleusercontent.com/proxy/bey5bBG_uP3BXNgjrCY_t7lBvEXLGaqfNAAHu_PvJ9AMRr4QFPRgsixX_4SfIjekDYgqitQTA-XrlemvHL-OeJyX6LnCqTL_0Ra9K0lG87Xz</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.844083,-26.3008813,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Dratini</name>
+				<description><![CDATA[<img src="https://lh5.googleusercontent.com/proxy/bey5bBG_uP3BXNgjrCY_t7lBvEXLGaqfNAAHu_PvJ9AMRr4QFPRgsixX_4SfIjekDYgqitQTA-XrlemvHL-OeJyX6LnCqTL_0Ra9K0lG87Xz" height="200" width="auto" /><br><br>Número Pokemon: 147<br>Número Avistamentos: 2]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>147</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>2.0</value>
+					</Data>
+					<Data name='gx_media_links'>
+						<value>https://lh5.googleusercontent.com/proxy/bey5bBG_uP3BXNgjrCY_t7lBvEXLGaqfNAAHu_PvJ9AMRr4QFPRgsixX_4SfIjekDYgqitQTA-XrlemvHL-OeJyX6LnCqTL_0Ra9K0lG87Xz</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.8493025,-26.3122567,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Dratini</name>
+				<description><![CDATA[Número Pokemon: 147<br>Número Avistamentos: 1]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>147</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>1.0</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.8429618,-26.2863546,0.0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Style id='icon-1899-DB4436'>
+			<IconStyle>
+				<color>ff3644DB</color>
+				<scale>1.0</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+				</Icon>
+			</IconStyle>
+		</Style>
+	</Document>
+</kml>
