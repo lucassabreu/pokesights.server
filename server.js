@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 var express = require('express');
 var bodyParser = require('body-parser');
-var nests = require("./routes/nests");
+var sightings = require("./routes/sightings");
 
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost/pokenests")
@@ -15,7 +15,7 @@ var app = express();
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-app.use ("/nests", nests);
+app.use ("/sightings", sightings);
 
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {

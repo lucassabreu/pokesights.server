@@ -1,6 +1,6 @@
 'use strict';
 
-var Nest = require("../models/Nest");
+var Sighting = require("../models/Sighting");
 var express = require('express');
 var multer = require('multer');
 var router = express.Router();
@@ -44,42 +44,48 @@ router.post ("/", upload.array(), function(req, res, next) {
          lng : lng
     };
 
-    Nest.addSight(sight, function (err, nest) {
+    Sighting.addSighting(sight, function (err, sighting) {
         if (err) return next(err);
-        res.json(nest)
+        res.json(sighting)
     })
 });
 
 router.get ("/:id", function (req, res, next) {
-    Nest.findById(req.params.id, function(err, nest) {
+    Sighting.findById(req.params.id, function(err, sighting) {
         if (err) return next(err);
-        res.json(nest);
+        res.json(sighting);
     });
 });
 
 router.put ("/:id/sight", function(req, res, next) {
-    Nest.findById(req.params.id, function(err, nest) {
+    Sighting.findById(req.params.id, function(err, sighting) {
         if (err) return next(err);
-        nest.sight();
-        nest.save()
-            .then (() => res.json(nest))
+        sighting.sight();
+        sighting.save()
+            .then (function() {
+                sighting.history = undefined;
+                res.json(sighting)
+            })
             .catch((err) => next(err));
     });
 });
 
 router.put ("/:id/unsight", function(req, res, next) {
-    Nest.findById(req.params.id, function(err, nest) {
+    Sighting.findById(req.params.id, function(err, sighting) {
         if (err) return next(err);
-        nest.unsight();
-        nest.save()
-            .then (() => res.json(nest))
+        sighting.unsight();
+        sighting.save()
+            .then (function() {
+                sighting.history = undefined;
+                res.json(sighting)
+            })
             .catch((err) => next(err));
     });
 });
 
-router.get ("/:lat/:lng/:d", function (req, res, next) {
+router.get ("/", function (req, res, next) {
 
-    var lat = parseFloat(req.params.lat);
+    var lat = parseFloat(req.query.lat);
 
     if (isNaN(lat)) {
         return next({
@@ -88,7 +94,7 @@ router.get ("/:lat/:lng/:d", function (req, res, next) {
         });
     }
 
-    var lng = parseFloat(req.params.lng);
+    var lng = parseFloat(req.query.lng);
 
     if (isNaN(lng)) {
         return next({
@@ -97,7 +103,7 @@ router.get ("/:lat/:lng/:d", function (req, res, next) {
         });
     }
 
-    var distance = parseFloat(req.params.d);
+    var distance = parseFloat(req.query.d);
 
     if (isNaN(distance)) {
         return next({
@@ -129,14 +135,22 @@ router.get ("/:lat/:lng/:d", function (req, res, next) {
         });
     }
 
-    Nest.findByParams ({
-        lat : lat,
-        lng : lng,
+    Sighting.findSightingsCloserTo ({
+        coords : {
+            lat : lat,
+            lng : lng,
+        },
         distance : distance,
         pokemons : pokemons,
-        rarity : rarity
-    }).then(function(nests) {
-        res.json(nests);
+        rarity : rarity,
+        fields : {
+            _id : true,
+            pokemon : true,
+            loc : true,
+        }
+        // fields : { history : false } // do not show history
+    }).then(function(sightings) {
+        res.json(sightings);
     }).catch((err) => next(err));
 
 });

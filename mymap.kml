@@ -2,7 +2,7 @@
 <kml xmlns='http://www.opengis.net/kml/2.2'>
 	<Document>
 		<name>Pokemon GO Joinville - Avistamentos</name>
-		<description><![CDATA[Mapa de Joinville com Avisamentos de Pokemon GO]]></description>
+		<description><![CDATA[Mapa de Joinville com Avisamentos de Pokemon GO<br><br>Imagens: http://assets.pokemon.com/assets/cms2/img/pokedex/full/{num_pokemon}.png]]></description>
 		<Folder>
 			<name>Não Categorizado</name>
 			<Placemark>
@@ -193,22 +193,38 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>Nidorino</name>
-				<description><![CDATA[<img src="https://lh6.googleusercontent.com/proxy/QhZz3piZfoqJXXbp7unA0HlHenn5bn-WitttGaWG3gGHobeF_KRQB-uGXG798kHCk48mHkUBz0xfOwZ1vngSsYlVj_H9Ypyr3sSvligN9ey9" height="200" width="auto" /><br><br>Número Pokemon: 033<br>Número Avistamentos: 1]]></description>
+				<name>Sandshrew</name>
+				<description><![CDATA[<img src="https://lh4.googleusercontent.com/proxy/pdx3a6wH06dizeLt96Qa4J2FrpBPXmOja1z3tKK7MqBfd4_kX68_--nz-U8a-Xn6VPjXTet2s_AgAf8HHGyhHTPeDGAwaYmInx876SMYfAZR" height="200" width="auto" /><br><br>Número Pokemon: 027<br>Número Avistamentos: 1]]></description>
 				<styleUrl>#icon-1899-DB4436</styleUrl>
 				<ExtendedData>
 					<Data name='Número Pokemon'>
-						<value>033</value>
+						<value>027</value>
 					</Data>
 					<Data name='Número Avistamentos'>
 						<value>1.0</value>
 					</Data>
 					<Data name='gx_media_links'>
-						<value>https://lh6.googleusercontent.com/proxy/QhZz3piZfoqJXXbp7unA0HlHenn5bn-WitttGaWG3gGHobeF_KRQB-uGXG798kHCk48mHkUBz0xfOwZ1vngSsYlVj_H9Ypyr3sSvligN9ey9</value>
+						<value>https://lh4.googleusercontent.com/proxy/pdx3a6wH06dizeLt96Qa4J2FrpBPXmOja1z3tKK7MqBfd4_kX68_--nz-U8a-Xn6VPjXTet2s_AgAf8HHGyhHTPeDGAwaYmInx876SMYfAZR</value>
 					</Data>
 				</ExtendedData>
 				<Point>
-					<coordinates>-48.8389492,-26.3047935,0.0</coordinates>
+					<coordinates>-48.8491201,-26.2847578,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Ekans</name>
+				<description><![CDATA[Número Pokemon: 023<br>Número Avistamentos: 2]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>023</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>2.0</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.8516736,-26.2655556,0.0</coordinates>
 				</Point>
 			</Placemark>
 		</Folder>
@@ -235,7 +251,7 @@
 			</Placemark>
 			<Placemark>
 				<name>Psyduck</name>
-				<description><![CDATA[<img src="https://lh4.googleusercontent.com/proxy/xv7LXT2vAZ5b1r3uIpQbwScv2_8DqxPO0pz6s50xEnfSaeWUe7bWxuHHokA5bW2bRT8AUIp4npjLEBuYnFAi7vonq4xegK4yKP6y7AgGOUo1" height="200" width="auto" /><br><br>Número Pokemon: 054<br>Número Avistamentos: 20]]></description>
+				<description><![CDATA[<img src="https://lh4.googleusercontent.com/proxy/xv7LXT2vAZ5b1r3uIpQbwScv2_8DqxPO0pz6s50xEnfSaeWUe7bWxuHHokA5bW2bRT8AUIp4npjLEBuYnFAi7vonq4xegK4yKP6y7AgGOUo1" height="200" width="auto" /><br><br>Número Pokemon: 054<br>Número Avistamentos: 20<br><br><img src="https://lh4.googleusercontent.com/proxy/FpDFGG_Cu-AoHcnQW5G6sXL3uakDYN9YmNWuiIMFstA2pfMJJHPvSz0CN5jGJpSDX2TdAhfZJ2Ky6wWo36Ihs6yuhiWzQSspGhMq-O5I0qHJ8bOilEkMmYzorIzImD4izUvDPKC49n-NYn1e7koXB0Ha5ABvdYHAqsnfv4co934" height="200" width="auto" />]]></description>
 				<styleUrl>#icon-1899-DB4436</styleUrl>
 				<ExtendedData>
 					<Data name='Número Pokemon'>
@@ -245,7 +261,7 @@
 						<value>20.0</value>
 					</Data>
 					<Data name='gx_media_links'>
-						<value>https://lh4.googleusercontent.com/proxy/xv7LXT2vAZ5b1r3uIpQbwScv2_8DqxPO0pz6s50xEnfSaeWUe7bWxuHHokA5bW2bRT8AUIp4npjLEBuYnFAi7vonq4xegK4yKP6y7AgGOUo1</value>
+						<value>https://lh4.googleusercontent.com/proxy/xv7LXT2vAZ5b1r3uIpQbwScv2_8DqxPO0pz6s50xEnfSaeWUe7bWxuHHokA5bW2bRT8AUIp4npjLEBuYnFAi7vonq4xegK4yKP6y7AgGOUo1 https://lh4.googleusercontent.com/proxy/FpDFGG_Cu-AoHcnQW5G6sXL3uakDYN9YmNWuiIMFstA2pfMJJHPvSz0CN5jGJpSDX2TdAhfZJ2Ky6wWo36Ihs6yuhiWzQSspGhMq-O5I0qHJ8bOilEkMmYzorIzImD4izUvDPKC49n-NYn1e7koXB0Ha5ABvdYHAqsnfv4co934</value>
 					</Data>
 				</ExtendedData>
 				<Point>
@@ -274,6 +290,25 @@
 					<coordinates>-48.849721,-26.2831705,0.0</coordinates>
 				</Point>
 			</Placemark>
+			<Placemark>
+				<name>Magmar</name>
+				<description><![CDATA[<img src="https://lh3.googleusercontent.com/proxy/4JFZ-CEKRYJNJ1hEtjqBxb7oAPKJbvXKkSm5bZcg9EQqSB4L5Dc0ZARENEvclNcb5tfLQMFNNp2X85E6WCfU-H_8yhFYYkc-IeuaX4AgzCAb" height="200" width="auto" /><br><br>Número Pokemon: 126<br>Número Avistamentos: 1]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>126</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>1.0</value>
+					</Data>
+					<Data name='gx_media_links'>
+						<value>https://lh3.googleusercontent.com/proxy/4JFZ-CEKRYJNJ1hEtjqBxb7oAPKJbvXKkSm5bZcg9EQqSB4L5Dc0ZARENEvclNcb5tfLQMFNNp2X85E6WCfU-H_8yhFYYkc-IeuaX4AgzCAb</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.840475,-26.3229229,0.0</coordinates>
+				</Point>
+			</Placemark>
 		</Folder>
 		<Folder>
 			<name>Especial</name>
@@ -298,14 +333,14 @@
 			</Placemark>
 			<Placemark>
 				<name>Bulbasaur</name>
-				<description><![CDATA[<img src="https://lh3.googleusercontent.com/proxy/FIOU6P-3ewsn3zFbQHrh1SmbwPdgl0h-K2puXu1-SKIBFXLQ-mz1ONNZ4SuyHdPTfjYSKxQ1cvyWvADWNzfZzYxTyk_YA2EfR-ZsiTAA0vJZ" height="200" width="auto" /><br><br>Número Pokemon: 001<br>Número Avistamentos: 1]]></description>
+				<description><![CDATA[<img src="https://lh3.googleusercontent.com/proxy/FIOU6P-3ewsn3zFbQHrh1SmbwPdgl0h-K2puXu1-SKIBFXLQ-mz1ONNZ4SuyHdPTfjYSKxQ1cvyWvADWNzfZzYxTyk_YA2EfR-ZsiTAA0vJZ" height="200" width="auto" /><br><br>Número Pokemon: 001<br>Número Avistamentos: 2]]></description>
 				<styleUrl>#icon-1899-DB4436</styleUrl>
 				<ExtendedData>
 					<Data name='Número Pokemon'>
 						<value>001</value>
 					</Data>
 					<Data name='Número Avistamentos'>
-						<value>1.0</value>
+						<value>2.0</value>
 					</Data>
 					<Data name='gx_media_links'>
 						<value>https://lh3.googleusercontent.com/proxy/FIOU6P-3ewsn3zFbQHrh1SmbwPdgl0h-K2puXu1-SKIBFXLQ-mz1ONNZ4SuyHdPTfjYSKxQ1cvyWvADWNzfZzYxTyk_YA2EfR-ZsiTAA0vJZ</value>
@@ -313,6 +348,25 @@
 				</ExtendedData>
 				<Point>
 					<coordinates>-48.8008404,-26.3210561,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Ivysaur</name>
+				<description><![CDATA[<img src="https://lh5.googleusercontent.com/proxy/hzqMQdojX8BfJgr1fa5-mS8SIfjrEFzhNuTWNf6lNdY5puOdfR8LnKiHZnELWOri8mQ6sGZDgVrH5Tt6IN2_invS1NZkDuqwS1BmeiRq9b7X" height="200" width="auto" /><br><br>Número Pokemon: 002<br>Número Avistamentos: 1]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>002</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>1.0</value>
+					</Data>
+					<Data name='gx_media_links'>
+						<value>https://lh5.googleusercontent.com/proxy/hzqMQdojX8BfJgr1fa5-mS8SIfjrEFzhNuTWNf6lNdY5puOdfR8LnKiHZnELWOri8mQ6sGZDgVrH5Tt6IN2_invS1NZkDuqwS1BmeiRq9b7X</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.8490558,-26.3005038,0.0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -427,6 +481,76 @@
 				</ExtendedData>
 				<Point>
 					<coordinates>-48.8429618,-26.2863546,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Bellsprout</name>
+				<description><![CDATA[Número Pokemon: 069<br>Número Avistamentos: 3]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>069</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>3.0</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.7798749,-26.3524065,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Tangela</name>
+				<description><![CDATA[Número Pokemon: 114<br>Número Avistamentos: 2]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>114</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>2.0</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.7799151,-26.3524342,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Nidorina</name>
+				<description><![CDATA[<img src="https://lh5.googleusercontent.com/proxy/C6w5mZPtXkiHanxFgHgcERBRKOrx4N5lvXbwWa5tLI9JbDqWj33LAVZ-1Z6DgEuyru4jFjQsvC3O9Zi-4kGf40u3CTvK8s0d9bq2N_ZjRcrh" height="200" width="auto" /><br><br>Número Pokemon: 030<br>Número Avistamentos: 1]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>030</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>1.0</value>
+					</Data>
+					<Data name='gx_media_links'>
+						<value>https://lh5.googleusercontent.com/proxy/C6w5mZPtXkiHanxFgHgcERBRKOrx4N5lvXbwWa5tLI9JbDqWj33LAVZ-1Z6DgEuyru4jFjQsvC3O9Zi-4kGf40u3CTvK8s0d9bq2N_ZjRcrh</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.7798803,-26.3524414,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Nidorino</name>
+				<description><![CDATA[<img src="https://lh6.googleusercontent.com/proxy/QhZz3piZfoqJXXbp7unA0HlHenn5bn-WitttGaWG3gGHobeF_KRQB-uGXG798kHCk48mHkUBz0xfOwZ1vngSsYlVj_H9Ypyr3sSvligN9ey9" height="200" width="auto" /><br><br>Número Pokemon: 033<br>Número Avistamentos: 1]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>033</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>1.0</value>
+					</Data>
+					<Data name='gx_media_links'>
+						<value>https://lh6.googleusercontent.com/proxy/QhZz3piZfoqJXXbp7unA0HlHenn5bn-WitttGaWG3gGHobeF_KRQB-uGXG798kHCk48mHkUBz0xfOwZ1vngSsYlVj_H9Ypyr3sSvligN9ey9</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.8389492,-26.3047935,0.0</coordinates>
 				</Point>
 			</Placemark>
 		</Folder>
