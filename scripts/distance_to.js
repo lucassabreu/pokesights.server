@@ -1,6 +1,6 @@
 require('dotenv').config({silent: true});
 var mongoose = require('mongoose');
-var Sighting = require("./models/Sighting");
+var Sighting = require("../models/Sighting");
 var xml2js = require('xml2js');
 var fs = require('fs');
 

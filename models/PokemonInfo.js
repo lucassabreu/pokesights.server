@@ -3,25 +3,25 @@
 var fs = require('fs');
 
 var PokemonInfo = function (number, name, family, rarity) {
-    this.number = number;
+    this.number = PokemonInfo.formatPokeNumber(number);
     this.name = name;
 
-    this.Pokemons[number] = this;
+    PokemonInfo.Pokemons[this.number] = this;
 
-    if (!this.Families[family])
-        this.Families[family] = {
+    if (!PokemonInfo.Families[family])
+        PokemonInfo.Families[family] = {
             name : family,
             pokemons : [],
             pokemonNumbers : []
         };
 
-    this.family = this.Families[family];
+    this.family = PokemonInfo.Families[family];
     this.family.pokemons.push(this);
     this.family.pokemonNumbers.push(this.number);
 
-    this.rarity = this.Rarities[rarity];
-    this.Rarities[rarity].pokemons.push(this);
-    this.Rarities[rarity].pokemonNumbers.push(this.number);
+    this.rarity = PokemonInfo.Rarities[rarity];
+    this.rarity.pokemons.push(this);
+    this.rarity.pokemonNumbers.push(this.number);
 }
 
 PokemonInfo.Rarities = {};
@@ -33,10 +33,6 @@ PokemonInfo.prototype = {
     name : null,
     family : null,
     rarity : null,
-
-    Rarities : PokemonInfo.Rarities,
-    Families : PokemonInfo.Families,
-    Pokemons : PokemonInfo.Pokemons,
 
     getFamilyMembers : function () {
         return this.family.pokemons;
@@ -67,5 +63,18 @@ PokemonInfo.load = function (filename) {
         });
     });
 }
+
+PokemonInfo.formatPokeNumber = function(num) {
+    num = parseInt(num);
+
+    if (num < 10)
+        return "00" + num.toString();
+    else {
+        if (num < 100)
+            return "0" + num.toString();
+        else
+            return num.toString();
+    }
+};
 
 module.exports = PokemonInfo;

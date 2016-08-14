@@ -1,54 +1,121 @@
 'use strict';
 
-var Sighting = require("../models/Sighting");
 var express = require('express');
 var multer = require('multer');
 var router = express.Router();
 var upload = multer(); // for parsing multipart/form-data
-var PokemonInfo = require("../models/PokemonInfo");
 
-var Utils = require('../utils');
+var logger = require("../logger");
+var Sighting = require("../models/Sighting");
+var PokemonInfo = require("../models/PokemonInfo");
+var ModelError = require("../models/ModelError");
+
+router.get ("/geo-code", function (req, res, next) {
+
+    var lat = parseFloat(req.query.lat);
+
+    if (isNaN(lat) || lat < -90 || lat > 90) {
+        return next({
+            status : 403,
+            message : "Latitude must be a valid number between -90 and 90 !"
+        });
+    }
+
+    var lng = parseFloat(req.query.lng);
+
+    if (isNaN(lng) || lng < -180 || lng > 180) {
+        return next({
+            status : 403,
+            message : "longitude must be a valid number between -180 and 180 !"
+        });
+    }
+
+    var distance = parseFloat(req.query.d);
+
+    if (isNaN(distance)) {
+        return next({
+            status : 403,
+            message : "Distance must be a valid number in kilometers !"
+        });
+    }
+
+    try {
+        var pokemons = convertPokemonParam(req.query.pokemons);
+        var rarity = convertRarityParam(req.query.rarity);
+    } catch (error) {
+        return next(error);    
+    }
+
+    Sighting.findSightingsCloserTo ({
+        coords : {
+            lat : lat,
+            lng : lng,
+        },
+        distance : distance * 1000, // km to meters
+        pokemons : pokemons,
+        rarity : rarity,
+        fields : {
+            history : false,
+        }
+    }).then(function(sightings) {
+        res.json(sightings);
+    }).catch((err) => next(err));
+
+});
+
+router.get ("/loc-name", function (req, res, next) {
+
+    var filter = {
+        "country" : req.query.country,
+        "state" : req.query.state,
+        "city" : req.query.city,
+    };
+
+    try {
+        var pokemons = convertPokemonParam(req.query.pokemons);
+        var rarity = convertRarityParam(req.query.rarity);
+    } catch (error) {
+        return next(error);    
+    }
+    
+    Sighting.findInLocation ({
+        country : filter.country,
+        state : filter.state,
+        city : filter.city,
+        pokemons : pokemons,
+        rarity : rarity,
+        fields : {
+            history : false,
+        }
+    }).then(function(sightings) {
+        res.json(sightings);
+    }).catch((err) => next(err));
+
+});
 
 router.post ("/", upload.array(), function(req, res, next) {
-    var pokemon = !req.body.pokemon ? 0 : parseInt(req.body.pokemon);
-
-    if (isNaN(pokemon) || pokemon < 1 || pokemon > 150) {
-        return next({
-            status : 403,
-            message : "Pokemon number must be between 001 and 150 !",
-        }); 
-    }
-
-    pokemon = Utils.formatPokeNumber(pokemon);
-
-    var lat = !req.body.lat ? null : parseFloat(req.body.lat);
-
-    if (lat === null || isNaN(lat)) {
-        return next({
-            status : 403,
-            message : "Latitude (lat) must be a valid number !"
-        });
-    }
-
-    var lng = !req.body.lng ? null : parseFloat(req.body.lng);
-
-    if (lng === null || isNaN(lng)) {
-        return next({
-            status : 403,
-            message : "Longitude (lng) must be a valid number !"
-        });
-    }
+    var pokemon = req.body.pokemon || 0;
+    var lat = req.body.lat;
+    var lng = req.body.lng;
+    var country = req.body.country;
+    var state = req.body.state;
+    var city = req.body.city;
 
     var sight = {
          pokemon : pokemon, 
          lat : lat, 
-         lng : lng
+         lng : lng,
+         country : country,
+         state : state,
+         city : city
     };
 
-    Sighting.addSighting(sight, function (err, sighting) {
-        if (err) return next(err);
-        res.json(sighting)
-    })
+    Sighting.addSighting(sight)
+        .then(function(sighting) {
+            sighting.history = undefined;
+            res.json(sighting)
+        })
+        .catch((err) => next(err));
 });
 
 router.get ("/:id", function (req, res, next) {
@@ -75,9 +142,8 @@ router.put ("/:id/sight", function(req, res, next) {
                 message : "This sighting does not exist !"
             });
 
-        sighting.sight();
-        sighting.save()
-            .then (function() {
+        sighting.sight()
+            .then (function(sighting) {
                 sighting.history = undefined;
                 res.json(sighting)
             })
@@ -95,9 +161,8 @@ router.put ("/:id/unsight", function(req, res, next) {
                 message : "This sighting does not exist !"
             });
 
-        sighting.unsight();
-        sighting.save()
-            .then (function() {
+        sighting.unsight()
+            .then (function(sighting) {
                 sighting.history = undefined;
                 res.json(sighting)
             })
@@ -105,74 +170,56 @@ router.put ("/:id/unsight", function(req, res, next) {
     });
 });
 
-router.get ("/", function (req, res, next) {
-
-    var lat = parseFloat(req.query.lat);
-
-    if (isNaN(lat)) {
-        return next({
-            status : 403,
-            message : "Latitude must be a valid number !"
-        });
-    }
-
-    var lng = parseFloat(req.query.lng);
-
-    if (isNaN(lng)) {
-        return next({
-            status : 403,
-            message : "longitude must be a valid number !"
-        });
-    }
-
-    var distance = parseFloat(req.query.d);
-
-    if (isNaN(distance)) {
-        return next({
-            status : 403,
-            message : "Distance must be a valid number in kilometers !"
-        });
-    }
-
-    var pokemons = req.query.pokemons ? req.query.pokemons.split(',') : [];
+function convertPokemonParam (pokemons) {
+    pokemons = pokemons ? pokemons.split(',') : [];
 
     for(var i in pokemons) {
         var n = parseInt(pokemons[i]);
         if (isNaN(n) || n < 1 || n > 150) {
-            return next({
+            throw {
                 status : 403,
                 message : "'pokemons' parameter must have only numbers between 001 and 150"
-            });
+            };
         }
 
-        pokemons[i] = Utils.formatPokeNumber(n);
+        pokemons[i] = PokemonInfo.formatPokeNumber(n);
     }
 
-    var rarity = req.query.rarity ? parseInt(req.query.rarity) : 0;
+    return pokemons;
+}
+
+function convertRarityParam (rarity) {
+    rarity = rarity ? parseInt(rarity) : 0;
     
     if (isNaN(rarity) || rarity < 0 || rarity > 7) {
-        return next({
+        throw {
             status : 403,
             message : "'rarity' parameter must be a number between 0 and 7"
-        });
+        };
     }
 
-    Sighting.findSightingsCloserTo ({
-        coords : {
-            lat : lat,
-            lng : lng,
-        },
-        distance : distance * 1000, // km to meters
-        pokemons : pokemons,
-        rarity : rarity,
-        fields : {
-            history : false,
-        }
-        // fields : { history : false } // do not show history
-    }).then(function(sightings) {
-        res.json(sightings);
-    }).catch((err) => next(err));
+    return rarity;
+}
 
-});
+function formatError(err) {
+    if (err instanceof ModelError)
+        return {
+            status : 403,
+            message : err.message,
+            stack : err.stack
+        };
+    else {
+        if (err instanceof Error) {
+            return {
+                message : err.message,
+                stack : err.stack
+            };
+        } else {
+            return {
+                message : err.message,
+            };
+        }
+    }
+}
 
 module.exports = router;

@@ -4,20 +4,25 @@ var Sighting = require("./models/Sighting");
 var xml2js = require('xml2js');
 var fs = require('fs');
 var PokemonInfo = require("./models/PokemonInfo");
-
 var parser = new xml2js.Parser();
+var util = require('util');
+var logger = require("./logger");
 
 var sightings = [];
 
 function insertSighting (s) {
 
-    if (sightings.length <= s)
-        return;
+    logger.info(util.format("%s/%s - completed", s, sightings.length));
 
-    Sighting.addSighting(sightings[s], function(err, r) {
-        if (err) console.error("erro no insert: ", err)
-        insertSighting(++s);
-    });
+    if (sightings.length <= s) {
+        logger.info("Done !");
+        process.exit();
+        return;
+    }
+
+    Sighting.addSighting(sightings[s])
+        .then((r) => insertSighting(++s))
+        .catch((err) => logger.error("erro no insert: ", err));
 }
 
 mongoose.Promise = global.Promise;
@@ -26,7 +31,7 @@ PokemonInfo.load(process.env.POKEMON_INFO_FILE)
         mongoose.connect(process.env.DSN_MONGO)
             .then(function() {
 
-                fs.readFile(__dirname + '/mymap.kml', function(err, data) {
+                fs.readFile(__dirname + '/../mymap.kml', function(err, data) {
                     parser.parseString(data, function (err, r) {
                         if (err)
                             console.log("inserting error ", err);
@@ -41,15 +46,15 @@ PokemonInfo.load(process.env.POKEMON_INFO_FILE)
                                         pokemon : placemarks[p].ExtendedData[0].Data[0].value[0],
                                         lat : parseFloat(placemarks[p].Point[0].coordinates[0].split(',')[1]),
                                         lng : parseFloat(placemarks[p].Point[0].coordinates[0].split(',')[0]),
+                                        country: "Brasil",
+                                        state: "SC",
+                                        city: "Joinville",
                                     });
                                 }
                             }
                         }
 
                         insertSighting(0);
-
-                        //console.log(sightings);
-                        console.log('Done');
                     });
                 });
             })

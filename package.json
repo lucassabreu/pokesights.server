@@ -17,7 +17,14 @@
     "body-parser": "^1.15.2",
     "dotenv": "^2.0.0",
     "express": "^4.14.0",
+    "file-stream-rotator": "0.0.7",
     "mongoose": "^4.5.8",
-    "multer": "^1.2.0"
+    "morgan": "^1.7.0",
+    "multer": "^1.2.0",
+    "rwlock": "^5.0.0",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "express-api-docs": "0.0.4"
   }
 }

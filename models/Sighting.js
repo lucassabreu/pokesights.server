@@ -2,6 +2,12 @@
 
 var mongoose = require('mongoose');
 var PokemonInfo = require("./PokemonInfo");
+var logger = require("../logger");
+const util = require('util');
+var ReadWriteLock = require('rwlock');
+var ModelError = require("./ModelError");
+
+var lock = new ReadWriteLock();
 
 var SightingSchema = mongoose.Schema ({
     pokemon : String,
@@ -30,85 +36,178 @@ var SightingSchema = mongoose.Schema ({
 SightingSchema.index({ loc : '2dsphere' });
 
 SightingSchema.methods.sight = function () {
-    this.timesSighted = !this.timesSighted ? 1 : this.timesSighted + 1;
-    this.lastTimeSight = new Date();
-    this.history.push({
-        when : this.lastTimeSight,
-        seen : true,
-    }); 
+    var self = this;
+    return new Promise(function (fullfill, reject) {
+        logger.debug(util.format("locking for 'update sighting %s'", (self._id ? self._id : "")));
+        lock.writeLock(
+            util.format("update sighting %s", (self._id ? self._id : "")),
+            function (release) {
+                self.timesSighted = !self.timesSighted ? 1 : self.timesSighted + 1;
+                self.lastTimeSight = new Date();
+                self.history.push({
+                    when : self.lastTimeSight,
+                    seen : true,
+                });
+                logger.debug(
+                    util.format(
+                        "Sigthing %s confirmmed for pokemon %s - %s", 
+                        self._id,
+                        self.pokemon,
+                        PokemonInfo.Pokemons[self.pokemon].name 
+                    )
+                );
+                self.save()
+                    .then(function(sighting) {
+                        release();
+                        fullfill(sighting);
+                    })
+                    .catch(function(err) {
+                        release();
+                        reject(err);
+                    });
+            }
+        );
+    });
 };
 
 SightingSchema.methods.unsight = function () {
-    this.timesUnsighted = !this.timesUnsighted ? 1 : this.timesUnsighted + 1;
-    this.lastTimeUnsight = new Date();
-    this.history.push({
-        when : this.lastTimeUnsight,
-        seen : false,
-    }); 
+    var self = this;
+    return new Promise(function (fullfill, reject) {
+        logger.debug(util.format("locking for 'update sighting %s'", (self._id ? self._id : "")));
+        lock.writeLock(
+            "update sighting " + (self._id ? self._id : ""),
+            function (release) {
+                self.timesUnsighted = !self.timesUnsighted ? 1 : self.timesUnsighted + 1;
+                self.lastTimeUnsight = new Date();
+                self.history.push({
+                    when : self.lastTimeUnsight,
+                    seen : false,
+                });
+                logger.debug(
+                    util.format(
+                        "Sigthing %s not confirmmed for pokemon %s - %s", 
+                        self._id,
+                        self.pokemon,
+                        PokemonInfo.Pokemons[self.pokemon].name 
+                    )
+                );
+                self.save()
+                    .then(function(sighting) {
+                        release();
+                        fullfill(sighting);
+                    })
+                    .catch(function(err) {
+                        release();
+                        reject(err);
+                    });
+            }
+        );
+    });
 };
 
 var Sighting = mongoose.model('sights', SightingSchema);
 
 Sighting.MERGE_DISTANCE = 250; // meters
 
-Sighting.addSighting = function (sight, callback) {
+Sighting.addSighting = function (sight) {
 
-    if (!PokemonInfo.Pokemons[sight.pokemon]) {
-        callback(new Error("Pokemon with number: '" + sight.pokemon + "' does not exist !"), null);
-        return;
-    }
+    return new Promise(function (fullfill, reject) {
 
-    Sighting.findOneSightingCloserTo ({
-        coords : sight,
-        distance : Sighting.MERGE_DISTANCE,
-        pokemons : sight.pokemon,
-    })
-        .then(function (sighting) {
-            if (sighting === null) {
-                var pi = PokemonInfo.Pokemons[sight.pokemon];
-                console.log(
-                    "Inserting Sight for Pokemon", sight.pokemon, "-",
-                    pi.name + ", rarity level:", 
-                    pi.rarity.level, "-",
-                    pi.rarity.description
-                );
+        sight.pokemon = sight.pokemon ? PokemonInfo.formatPokeNumber(sight.pokemon) : "000";
 
-                sighting = new Sighting({
-                    pokemon : sight.pokemon,
-                    rarity : pi.rarity.level,
-                    loc : {
-                        coordinates : [ sight.lng, sight.lat ],
-                        city : {
-                            name : sight.city,
-                            state : sight.state,
-                            country : sight.country
-                        }
+        if (!PokemonInfo.Pokemons[sight.pokemon]) {
+            reject(new ModelError(util.format("Pokemon with number: '%s' does not exist !", sight.pokemon)));
+            return;
+        }
+
+        sight.lat = sight.lat ? parseFloat(sight.lat) : null;
+        if (sight.lat === null || isNaN(sight.lat) || sight.lat < -90 || sight.lat > 90) {
+            reject(new ModelError("Latitude (lat) must be a valid number between -90 and 90 !"));
+            return;
+        }
+
+        sight.lng = sight.lng ? parseFloat(sight.lng) : null;
+        if (sight.lng === null || isNaN(sight.lng) || sight.lng < -180 || sight.lng > 180) {
+            reject(new ModelError("Longitude (lng) must be a valid number between -180 and 180 !"));
+            return;
+        }
+
+        if (!sight.country || sight.country === null) {
+            reject(new ModelError("Country must be informmed !"));
+            return;
+        }
+
+        if (!sight.state || sight.state === null) {
+            reject(new ModelError("State must be informmed !"));
+            return;
+        }
+
+        if (!sight.city || sight.state === null) {
+            reject(new ModelError("City must be informmed !"));
+            return;
+        }
+
+        logger.debug("locking for 'add sighting'");
+        lock.writeLock('add sighting', function (release) {
+            Sighting.findOneSightingCloserTo ({
+                coords : sight,
+                distance : Sighting.MERGE_DISTANCE,
+                pokemons : sight.pokemon,
+            })
+                .then(function (sighting) {
+                    if (sighting === null) {
+                        var pi = PokemonInfo.Pokemons[sight.pokemon];
+                        logger.debug(
+                            util.format(
+                                "Sighting inserted for Pokemon %s - %s, rarity level: %s - %s", 
+                                sight.pokemon, 
+                                pi.name,
+                                pi.rarity.level,
+                                pi.rarity.description)
+                        );
+
+                        sighting = new Sighting({
+                            pokemon : sight.pokemon,
+                            rarity : pi.rarity.level,
+                            loc : {
+                                coordinates : [ sight.lng, sight.lat ],
+                                city : {
+                                    name : sight.city,
+                                    state : sight.state,
+                                    country : sight.country
+                                }
+                            }
+                        });
                     }
-                });
-            }
 
-            sighting.sight();
-            sighting.save()
-                .then(() => callback(null, sighting) )
-                .catch(function(err) {
-                    callback(err, sighting)
+                    sighting.sight()
+                        .then(function(sighting){
+                            release();
+                            fullfill(sighting)
+                        })
+                        .catch(function(err){
+                            release();
+                            reject(err)
+                        });
+                })
+                .catch(function(err){
+                    release();
+                    reject(err)
                 });
-        })
-        .catch(function(err) {
-            callback(err, [])
         });
+    });
 };
 
 Sighting.getQueryInLocation = function (country, state, city, pokemons, rarity) {
     var query = {
-        country : country,
+        "loc.city.country" : country,
     };
 
     if (state) {
-        query.state = state;
+        query["loc.city.state"] = state;
 
         if (city)
-            query.city = city;
+            query["loc.city.name"] = city;
     }
 
     if (pokemons){
@@ -187,7 +286,7 @@ Sighting.findSightingsCloserTo = function (params, callback) {
 Sighting.findOneInLocation = function (params, callback) {
     return Sighting.findOne (
         Sighting.getQueryInLocation (
-            params.contry,
+            params.country,
             params.state,
             params.city, 
             params.pokemons, 
@@ -201,7 +300,7 @@ Sighting.findOneInLocation = function (params, callback) {
 Sighting.findInLocation = function (params, callback) {
     return Sighting.find (
         Sighting.getQueryInLocation (
-            params.contry,
+            params.country,
             params.state,
             params.city, 
             params.pokemons, 
