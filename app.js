@@ -20,7 +20,7 @@ PokemonInfo.load(process.env.POKEMON_INFO_FILE)
 
 module.exports.setup = function (app) {
 
-    var logDirectory = path.join(__dirname, process.env.LOG_FILE_DIR);
+    var logDirectory = path.join(process.cwd(), process.env.LOG_FILE_DIR);
 
     // ensure log directory exists
     fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);

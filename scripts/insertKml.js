@@ -26,7 +26,7 @@ function insertSighting (s) {
 }
 
 mongoose.Promise = global.Promise;
-PokemonInfo.load(process.env.POKEMON_INFO_FILE)
+PokemonInfo.load(process.cwd() + process.env.POKEMON_INFO_FILE)
     .then (function () {
         mongoose.connect(process.env.DSN_MONGO)
             .then(function() {

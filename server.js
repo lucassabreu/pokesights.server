@@ -1,7 +1,7 @@
 'use strict';
 
+require('dotenv').config();
 var express = require('express');
-require('dotenv').config({silent: true});
 var logger = require('./logger');
 
 var app = express();
@@ -11,6 +11,6 @@ require('./app.js').setup(app);
 
 server.use("/api/v1", app);
 
-server.listen(8080, function () {
+server.listen(process.env.SERVER_PORT, function () {
     logger.info('ready...');
 });
