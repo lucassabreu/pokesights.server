@@ -1,0 +1,769 @@
+{
+    "rarity_description" : [
+        "Very Common",
+        "Common",
+        "Uncommon",
+        "Rare",
+        "Very Rare",
+        "Special",
+        "Epic",
+        "Legendary"
+    ],
+    "pokemons" :{
+        "001" : {
+            "name" : "Bulbasaur",
+            "rarity" : 1,
+            "family" : "BULBASAUR"
+        },
+        "002" : {
+            "name" : "Ivysaur",
+            "rarity" : 5,
+            "family" : "BULBASAUR"
+        },
+        "003" : {
+            "name" : "Venosaur",
+            "rarity" : 6,
+            "family" : "BULBASAUR"
+        },
+        "004" : {
+            "name" : "Charmander",
+            "rarity" : 1,
+            "family" : "CHARMANDER"
+        },
+        "005" : {
+            "name" : "Charmeleon",
+            "rarity" : 5,
+            "family" : "CHARMANDER"
+        },
+        "006" : {
+            "name" : "Charizard",
+            "rarity" : 6,
+            "family" : "CHARMANDER"
+        },
+        "007" : {
+            "name" : "Squirtle",
+            "rarity" : 1,
+            "family" : "SQUIRTLE"
+        },
+        "008" : { 
+            "name" : "Wartortle",
+            "rarity" : 5,
+            "family" : "SQUIRTLE"
+        },
+        "009" : { 
+            "name" : "Blastoise",
+            "rarity" : 6,
+            "family" : "SQUIRTLE"
+        },
+        "010" : { 
+            "name" : "Caterpie",
+            "rarity" : 0,
+            "family" : "CARTERPIE"
+        },
+        "011" : { 
+            "name" : "Metapod",
+            "rarity" : 1,
+            "family" : "CARTERPIE"
+        },
+        "012" : { 
+            "name" : "Butterfree",
+            "rarity" : 2,
+            "family" : "CARTERPIE"
+        },
+        "013" : { 
+            "name" : "Weedle",
+            "rarity" : 0,
+            "family" : "WEEDLE"
+        },
+        "014" : { 
+            "name" : "Kakuna",
+            "rarity" : 1,
+            "family" : "WEEDLE"
+        },
+        "015" : { 
+            "name" : "Beedrill",
+            "rarity" : 3,
+            "family" : "WEEDLE"
+        },
+        "016" : { 
+            "name" : "Pidgey",
+            "rarity" : 0,
+            "family" : "PIDGEY"
+        },
+        "017" : { 
+            "name" : "Pidgeotto",
+            "rarity" : 1,
+            "family" : "PIDGEY"
+        },
+        "018" : { 
+            "name" : "Pidgeot",
+            "rarity" : 3,
+            "family" : "PIDGEY"
+        },
+        "019" : { 
+            "name" : "Rattata",
+            "rarity" : 0,
+            "family" : "RATTATA"
+        },
+        "020" : { 
+            "name" : "Raticate",
+            "rarity" : 1,
+            "family" : "RATTATA"
+        },
+        "021" : { 
+            "name" : "Spearow",
+            "rarity" : 1,
+            "family" : "SPEAROW"
+        },
+        "022" : { 
+            "name" : "Fearow",
+            "rarity" : 2,
+            "family" : "SPEAROW"
+        },
+        "023" : { 
+            "name" : "Ekans",
+            "rarity" : 0,
+            "family" : "EKANS"
+        },
+        "024" : { 
+            "name" : "Arbok",
+            "rarity" : 1,
+            "family" : "EKANS"
+        },
+        "025" : { 
+            "name" : "Pikachu",
+            "rarity" : 1,
+            "family" : "PIKACHU"
+        },
+        "026" : { 
+            "name" : "Raichu",
+            "rarity" : 4,
+            "family" : "PIKACHU"
+        },
+        "027" : { 
+            "name" : "Sandshrew",
+            "rarity" : 0,
+            "family" : "SANDSHREW"
+        },
+        "028" : { 
+            "name" : "Sandslash",
+            "rarity" : 1,
+            "family" : "SANDSHREW"
+        },
+        "029" : { 
+            "name" : "Nidoran♀",
+            "rarity" : 0,
+            "family" : "NIDORAN_F"
+        },
+        "030" : { 
+            "name" : "Nidorina",
+            "rarity" : 2,
+            "family" : "NIDORAN_F"
+        },
+        "031" : { 
+            "name" : "Nidoqueen",
+            "rarity" : 4,
+            "family" : "NIDORAN_F"
+        },
+        "032" : { 
+            "name" : "Nidoran♂",
+            "rarity" : 0,
+            "family" : "NIDORAN_M"
+        },
+        "033" : { 
+            "name" : "Nidorino",
+            "rarity" : 2,
+            "family" : "NIDORAN_M"
+        },
+        "034" : { 
+            "name" : "Nidoking",
+            "rarity" : 4,
+            "family" : "NIDORAN_M"
+        },
+        "035" : { 
+            "name" : "Clefairy",
+            "rarity" : 1,
+            "family" : "CLEFAIRY"
+        },
+        "036" : { 
+            "name" : "Clefable",
+            "rarity" : 6,
+            "family" : "CLEFAIRY"
+        },
+        "037" : { 
+            "name" : "Vulpix",
+            "rarity" : 1,
+            "family" : "VULPIX"
+        },
+        "038" : { 
+            "name" : "Ninetales",
+            "rarity" : 2,
+            "family" : "VULPIX"
+        },
+        "039" : { 
+            "name" : "Jigglypuff",
+            "rarity" : 1,
+            "family" : "JIGGLYPUFF"
+        },
+        "040" : { 
+            "name" : "Wigglytuff",
+            "rarity" : 2,
+            "family" : "JIGGLYPUFF"
+        },
+        "041" : { 
+            "name" : "Zubat",
+            "rarity" : 0,
+            "family" : "ZUBAT"
+        },
+        "042" : { 
+            "name" : "Golbat",
+            "rarity" : 1,
+            "family" : "ZUBAT"
+        },
+        "043" : { 
+            "name" : "Oddish",
+            "rarity" : 0,
+            "family" : "ODDISH"
+        },
+        "044" : { 
+            "name" : "Gloom",
+            "rarity" : 2,
+            "family" : "ODDISH"
+        },
+        "045" : { 
+            "name" : "Vileplume",
+            "rarity" : 4,
+            "family" : "ODDISH"
+        },
+        "046" : { 
+            "name" : "Paras",
+            "rarity" : 0,
+            "family" : "PARAS"
+        },
+        "047" : { 
+            "name" : "Parasect",
+            "rarity" : 2,
+            "family" : "PARAS"
+        },
+        "048" : { 
+            "name" : "Venonat",
+            "rarity" : 0,
+            "family" : "VENONAT"
+        },
+        "049" : { 
+            "name" : "Venomoth",
+            "rarity" : 4,
+            "family" : "VENONAT"
+        },
+        "050" : { 
+            "name" : "Diglett",
+            "rarity" : 1,
+            "family" : "DIGLETT"
+        },
+        "051" : { 
+            "name" : "Dugtrio",
+            "rarity" : 2,
+            "family" : "DIGLETT"
+        },
+        "052" : { 
+            "name" : "Meowth",
+            "rarity" : 0,
+            "family" : "MEOWTH"
+        },
+        "053" : { 
+            "name" : "Persian",
+            "rarity" : 1,
+            "family" : "MEOWTH"
+        },
+        "054" : { 
+            "name" : "Psyduck",
+            "rarity" : 1,
+            "family" : "PSYDUCK"
+        },
+        "055" : { 
+            "name" : "Golduck",
+            "rarity" : 2,
+            "family" : "PSYDUCK"
+        },
+        "056" : { 
+            "name" : "Mankey",
+            "rarity" : 0,
+            "family" : "MANKEY"
+        },
+        "057" : { 
+            "name" : "Primeape",
+            "rarity" : 2,
+            "family" : "MANKEY"
+        },
+        "058" : { 
+            "name" : "Growlithe",
+            "rarity" : 1,
+            "family" : "GROWLITHE"
+        },
+        "059" : { 
+            "name" : "Arcanine",
+            "rarity" : 3,
+            "family" : "GROWLITHE"
+        },
+        "060" : { 
+            "name" : "Poliwag",
+            "rarity" : 0,
+            "family" : "POLIWAG"
+        },
+        "061" : { 
+            "name" : "Poliwhirl",
+            "rarity" : 2,
+            "family" : "POLIWAG"
+        },
+        "062" : { 
+            "name" : "Poliwrath",
+            "rarity" : 4,
+            "family" : "POLIWAG"
+        },
+        "063" : { 
+            "name" : "Abra",
+            "rarity" : 1,
+            "family" : "ABRA"
+        },
+        "064" : { 
+            "name" : "Kadabra",
+            "rarity" : 2,
+            "family" : "ABRA"
+        },
+        "065" : { 
+            "name" : "Alakazam",
+            "rarity" : 4,
+            "family" : "ABRA"
+        },
+        "066" : { 
+            "name" : "Machop",
+            "rarity" : 0,
+            "family" : "MACHOP"
+        },
+        "067" : { 
+            "name" : "Machoke",
+            "rarity" : 1,
+            "family" : "MACHOP"
+        },
+        "068" : { 
+            "name" : "Machamp",
+            "rarity" : 2,
+            "family" : "MACHOP"
+        },
+        "069" : { 
+            "name" : "Bellsprout",
+            "rarity" : 0,
+            "family" : "BELLSPROUT"
+        },
+        "070" : { 
+            "name" : "Weepinbell",
+            "rarity" : 3,
+            "family" : "BELLSPROUT"
+        },
+        "071" : { 
+            "name" : "Victreebel",
+            "rarity" : 4,
+            "family" : "BELLSPROUT"
+        },
+        "072" : { 
+            "name" : "Tentacool",
+            "rarity" : 1,
+            "family" : "TENTACOOL"
+        },
+        "073" : { 
+            "name" : "Tentacruel",
+            "rarity" : 2,
+            "family" : "TENTACOOL"
+        },
+        "074" : { 
+            "name" : "Geodude",
+            "rarity" : 0,
+            "family" : "GEODUDE"
+        },
+        "075" : { 
+            "name" : "Graveler",
+            "rarity" : 1,
+            "family" : "GEODUDE"
+        },
+        "076" : { 
+            "name" : "Golem",
+            "rarity" : 2,
+            "family" : "GEODUDE"
+        },
+        "077" : { 
+            "name" : "Ponyta",
+            "rarity" : 1,
+            "family" : "PONYTA"
+        },
+        "078" : { 
+            "name" : "Rapidash",
+            "rarity" : 3,
+            "family" : "PONYTA"
+        },
+        "079" : { 
+            "name" : "Slowpoke",
+            "rarity" : 0,
+            "family" : "SLOWPOKE"
+        },
+        "080" : { 
+            "name" : "Slowbro",
+            "rarity" : 3,
+            "family" : "SLOWPOKE"
+        },
+        "081" : { 
+            "name" : "Magnemite",
+            "rarity" : 0,
+            "family" : "MAGNEMITE"
+        },
+        "082" : { 
+            "name" : "Magneton",
+            "rarity" : 2,
+            "family" : "MAGNEMITE"
+        },
+        "083" : { 
+            "name" : "Farfetch'd",
+            "rarity" : 3,
+            "family" : "FARFETCH_D"
+        },
+        "084" : { 
+            "name" : "Doduo",
+            "rarity" : 1,
+            "family" : "DUDUO"
+        },
+        "085" : { 
+            "name" : "Dodrio",
+            "rarity" : 2,
+            "family" : "DUDUO"
+        },
+        "086" : { 
+            "name" : "Seel",
+            "rarity" : 1,
+            "family" : "SEEL"
+        },
+        "087" : { 
+            "name" : "Dewgong",
+            "rarity" : 4,
+            "family" : "SEEL"
+        },
+        "088" : { 
+            "name" : "Grimer",
+            "rarity" : 1,
+            "family" : "GRIMER"
+        },
+        "089" : { 
+            "name" : "Muk",
+            "rarity" : 3,
+            "family" : "GRIMER"
+        },
+        "090" : { 
+            "name" : "Shellder",
+            "rarity" : 1,
+            "family" : "SHELLDER"
+        },
+        "091" : { 
+            "name" : "Cloyster",
+            "rarity" : 2,
+            "family" : "SHELLDER"
+        },
+        "092" : { 
+            "name" : "Gastly",
+            "rarity" : 0,
+            "family" : "GASTLY"
+        },
+        "093" : { 
+            "name" : "Haunter",
+            "rarity" : 1,
+            "family" : "GASTLY"
+        },
+        "094" : { 
+            "name" : "Gengar",
+            "rarity" : 4,
+            "family" : "GASTLY"
+        },
+        "095" : { 
+            "name" : "Onix",
+            "rarity" : 3,
+            "family" : "GASTLY"
+        },
+        "096" : { 
+            "name" : "Drowzee",
+            "rarity" : 1,
+            "family" : "DROWZEE"
+        },
+        "097" : { 
+            "name" : "Hypno",
+            "rarity" : 2,
+            "family" : "DROWZEE"
+        },
+        "098" : { 
+            "name" : "Krabby",
+            "rarity" : 0,
+            "family" : "KRABBY"
+        },
+        "099" : { 
+            "name" : "Kingler",
+            "rarity" : 3,
+            "family" : "KRABBY"
+        },
+        "100" : { 
+            "name" : "Voltorb",
+            "rarity" : 0,
+            "family" : "VOLTORB"
+        },
+        "101" : { 
+            "name" : "Electrode",
+            "rarity" : 1,
+            "family" : "VOLTORB"
+        },
+        "102" : { 
+            "name" : "Exeggcute",
+            "rarity" : 1,
+            "family" : "EXEGGCUTE"
+        },
+        "103" : { 
+            "name" : "Exeggutor",
+            "rarity" : 3,
+            "family" : "EXEGGCUTE"
+        },
+        "104" : { 
+            "name" : "Cubone",
+            "rarity" : 1,
+            "family" : "CUBONE"
+        },
+        "105" : { 
+            "name" : "Marowak",
+            "rarity" : 4,
+            "family" : "CUBONE"
+        },
+        "106" : { 
+            "name" : "Hitmonlee",
+            "rarity" : 1,
+            "family" : "HITMONLEE"
+        },
+        "107" : { 
+            "name" : "Hitmonchan",
+            "rarity" : 2,
+            "family" : "HITMONCHAN"
+        },
+        "108" : { 
+            "name" : "Lickitung",
+            "rarity" : 2,
+            "family" : "LICKITUNG"
+        },
+        "109" : { 
+            "name" : "Koffing",
+            "rarity" : 1,
+            "family" : "KOFFING"
+        },
+        "110" : { 
+            "name" : "Weezing",
+            "rarity" : 2,
+            "family" : "KOFFING"
+        },
+        "111" : { 
+            "name" : "Rhyhorn",
+            "rarity" : 1,
+            "family" : "RHYHORN"
+        },
+        "112" : { 
+            "name" : "Rhydon",
+            "rarity" : 3,
+            "family" : "RHYHORN"
+        },
+        "113" : { 
+            "name" : "Chansey",
+            "rarity" : 2,
+            "family" : "CHANSEY"
+        },
+        "114" : { 
+            "name" : "Tangela",
+            "rarity" : 3,
+            "family" : "TANGELA"
+        },
+        "115" : { 
+            "name" : "Kangaskhan",
+            "rarity" : 4,
+            "family" : "KANGASKHAN"
+        },
+        "116" : { 
+            "name" : "Horsea",
+            "rarity" : 1,
+            "family" : "HORSEA"
+        },
+        "117" : { 
+            "name" : "Seadra",
+            "rarity" : 2,
+            "family" : "HORSEA"
+        },
+        "118" : { 
+            "name" : "Goldeen",
+            "rarity" : 0,
+            "family" : "GOLDEEN"
+        },
+        "119" : { 
+            "name" : "Seaking",
+            "rarity" : 2,
+            "family" : "GOLDEEN"
+        },
+        "120" : { 
+            "name" : "Staryu",
+            "rarity" : 1,
+            "family" : "STARYU"
+        },
+        "121" : { 
+            "name" : "Starmie",
+            "rarity" : 2,
+            "family" : "STARYU"
+        },
+        "122" : { 
+            "name" : "Mr. Mime",
+            "rarity" : 3,
+            "family" : "MR_MIME"
+        },
+        "123" : { 
+            "name" : "Scyther",
+            "rarity" : 2,
+            "family" : "SCYTHER"
+        },
+        "124" : { 
+            "name" : "Jynx",
+            "rarity" : 1,
+            "family" : "JYNX"
+        },
+        "125" : { 
+            "name" : "Electabuzz",
+            "rarity" : 4,
+            "family" : "ELECTABUZZ"
+        },
+        "126" : { 
+            "name" : "Magmar",
+            "rarity" : 3,
+            "family" : "MAGMAR"
+        },
+        "127" : { 
+            "name" : "Pinsir",
+            "rarity" : 3,
+            "family" : "PINSIR"
+        },
+        "128" : { 
+            "name" : "Tauros",
+            "rarity" : 6,
+            "family" : "TAUROS"
+        },
+        "129" : { 
+            "name" : "Magikarp",
+            "rarity" : 0,
+            "family" : "MAGIKARP"
+        },
+        "130" : { 
+            "name" : "Gyarados",
+            "rarity" : 4,
+            "family" : "MAGIKARP"
+        },
+        "131" : { 
+            "name" : "Lapras",
+            "rarity" : 4,
+            "family" : "LAPRAS"
+        },
+        "132" : { 
+            "name" : "Ditto",
+            "rarity" : 7,
+            "family" : "DITTO"
+        },
+        "133" : { 
+            "name" : "Eevee",
+            "rarity" : 0,
+            "family" : "EEVEE"
+        },
+        "134" : { 
+            "name" : "Vaporeon",
+            "rarity" : 4,
+            "family" : "EEVEE"
+        },
+        "135" : { 
+            "name" : "Jolteon",
+            "rarity" : 3,
+            "family" : "EEVEE"
+        },
+        "136" : { 
+            "name" : "Flareon",
+            "rarity" : 3,
+            "family" : "EEVEE"
+        },
+        "137" : { 
+            "name" : "Porygon",
+            "rarity" : 5,
+            "family" : "PORYGON"
+        },
+        "138" : { 
+            "name" : "Omanyte",
+            "rarity" : 5,
+            "family" : "OMANYTE"
+        },
+        "139" : { 
+            "name" : "Omastar",
+            "rarity" : 6,
+            "family" : "OMANYTE"
+        },
+        "140" : { 
+            "name" : "Kabuto",
+            "rarity" : 2,
+            "family" : "KABUTO"
+        },
+        "141" : { 
+            "name" : "Kabutops",
+            "rarity" : 4,
+            "family" : "KABUTO"
+        },
+        "142" : { 
+            "name" : "Aerodactyl",
+            "rarity" : 5,
+            "family" : "AERODACTYL"
+        },
+        "143" : { 
+            "name" : "Snorlax",
+            "rarity" : 3,
+            "family" : "SNORLAX"
+        },
+        "144" : { 
+            "name" : "Articuno",
+            "rarity" : 7,
+            "family" : "ARTICUNO"
+        },
+        "145" : { 
+            "name" : "Zapdos",
+            "rarity" : 7,
+            "family" : "ZAPTOS"
+        },
+        "146" : { 
+            "name" : "Moltres",
+            "rarity" : 7,
+            "family" : "MOLTRES"
+        },
+        "147" : { 
+            "name" : "Dratini",
+            "rarity" : 2,
+            "family" : "DRATINI"
+        },
+        "148" : { 
+            "name" : "Dragonair",
+            "rarity" : 5,
+            "family" : "DRATINI"
+        },
+        "149" : { 
+            "name" : "Dragonite",
+            "rarity" : 6,
+            "family" : "DRATINI"
+        },
+        "150" : { 
+            "name" : "Mewtwo",
+            "rarity" : 7,
+            "family" : "MEWTWO"
+        },
+        "151" : { 
+            "name" : "Mew",
+            "rarity" : 7,
+            "family" : "MEW"
+        }
+    }
+}

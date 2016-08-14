@@ -5,6 +5,7 @@ var express = require('express');
 var multer = require('multer');
 var router = express.Router();
 var upload = multer(); // for parsing multipart/form-data
+var PokemonInfo = require("../models/PokemonInfo");
 
 var Utils = require('../utils');
 
@@ -20,21 +21,21 @@ router.post ("/", upload.array(), function(req, res, next) {
 
     pokemon = Utils.formatPokeNumber(pokemon);
 
-    var lat = !req.body.latitude ? null : parseFloat(req.body.latitude);
+    var lat = !req.body.lat ? null : parseFloat(req.body.lat);
 
     if (lat === null || isNaN(lat)) {
         return next({
             status : 403,
-            message : "Latitude must be a valid number !"
+            message : "Latitude (lat) must be a valid number !"
         });
     }
 
-    var lng = !req.body.longitude ? null : parseFloat(req.body.longitude);
+    var lng = !req.body.lng ? null : parseFloat(req.body.lng);
 
     if (lng === null || isNaN(lng)) {
         return next({
             status : 403,
-            message : "longitude must be a valid number !"
+            message : "Longitude (lng) must be a valid number !"
         });
     }
 
@@ -53,6 +54,13 @@ router.post ("/", upload.array(), function(req, res, next) {
 router.get ("/:id", function (req, res, next) {
     Sighting.findById(req.params.id, function(err, sighting) {
         if (err) return next(err);
+
+        if (sighting === null)
+            return next({
+                status : 404,
+                message : "This sighting does not exist !"
+            });
+
         res.json(sighting);
     });
 });
@@ -60,6 +68,13 @@ router.get ("/:id", function (req, res, next) {
 router.put ("/:id/sight", function(req, res, next) {
     Sighting.findById(req.params.id, function(err, sighting) {
         if (err) return next(err);
+
+        if (sighting === null)
+            return next({
+                status : 404,
+                message : "This sighting does not exist !"
+            });
+
         sighting.sight();
         sighting.save()
             .then (function() {
@@ -73,6 +88,13 @@ router.put ("/:id/sight", function(req, res, next) {
 router.put ("/:id/unsight", function(req, res, next) {
     Sighting.findById(req.params.id, function(err, sighting) {
         if (err) return next(err);
+
+        if (sighting === null)
+            return next({
+                status : 404,
+                message : "This sighting does not exist !"
+            });
+
         sighting.unsight();
         sighting.save()
             .then (function() {
@@ -108,7 +130,7 @@ router.get ("/", function (req, res, next) {
     if (isNaN(distance)) {
         return next({
             status : 403,
-            message : "Distance must be a valid integer in meters !"
+            message : "Distance must be a valid number in kilometers !"
         });
     }
 
@@ -123,7 +145,7 @@ router.get ("/", function (req, res, next) {
             });
         }
 
-        pokemons[i] = Utils.formatPokeNumer(n);
+        pokemons[i] = Utils.formatPokeNumber(n);
     }
 
     var rarity = req.query.rarity ? parseInt(req.query.rarity) : 0;
@@ -140,13 +162,11 @@ router.get ("/", function (req, res, next) {
             lat : lat,
             lng : lng,
         },
-        distance : distance,
+        distance : distance * 1000, // km to meters
         pokemons : pokemons,
         rarity : rarity,
         fields : {
-            _id : true,
-            pokemon : true,
-            loc : true,
+            history : false,
         }
         // fields : { history : false } // do not show history
     }).then(function(sightings) {

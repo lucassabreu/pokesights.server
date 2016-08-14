@@ -1,14 +1,19 @@
 'use strict';
 
+require('dotenv').config({silent: true});
 var mongoose = require('mongoose');
 var express = require('express');
 var bodyParser = require('body-parser');
 var sightings = require("./routes/sightings");
+var PokemonInfo = require("./models/PokemonInfo");
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost/pokenests")
-  .then(() =>  console.log('connection succesful'))
+mongoose.connect(process.env.DSN_MONGO)
+  .then(() =>  console.log('connection succesful...'))
   .catch((err) => console.error(err));
+
+PokemonInfo.load(process.env.POKEMON_INFO_FILE)
+    .then(() => console.log("Pokemon info loaded..."));
 
 var app = express();
 
@@ -17,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 
 app.use ("/sightings", sightings);
 
-if (app.get('env') === 'development') {
+if (process.env.ENV === 'development') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
         res.json({

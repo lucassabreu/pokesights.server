@@ -1,12 +1,14 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var PokemonInfo = require("./PokemonInfo");
 
 var SightingSchema = mongoose.Schema ({
     pokemon : String,
+    rarity : Number,
     loc: {
-        type: { type: String, default : "Point"},
-        coordinates: [],
+        type: { type : String, default : "Point" },
+        coordinates : [],
         city : {
             name : String,
             state : String,
@@ -51,6 +53,11 @@ Sighting.MERGE_DISTANCE = 250; // meters
 
 Sighting.addSighting = function (sight, callback) {
 
+    if (!PokemonInfo.Pokemons[sight.pokemon]) {
+        callback(new Error("Pokemon with number: '" + sight.pokemon + "' does not exist !"), null);
+        return;
+    }
+
     Sighting.findOneSightingCloserTo ({
         coords : sight,
         distance : Sighting.MERGE_DISTANCE,
@@ -58,10 +65,24 @@ Sighting.addSighting = function (sight, callback) {
     })
         .then(function (sighting) {
             if (sighting === null) {
+                var pi = PokemonInfo.Pokemons[sight.pokemon];
+                console.log(
+                    "Inserting Sight for Pokemon", sight.pokemon, "-",
+                    pi.name + ", rarity level:", 
+                    pi.rarity.level, "-",
+                    pi.rarity.description
+                );
+
                 sighting = new Sighting({
                     pokemon : sight.pokemon,
+                    rarity : pi.rarity.level,
                     loc : {
-                        coordinates : [ sight.lng, sight.lat ]
+                        coordinates : [ sight.lng, sight.lat ],
+                        city : {
+                            name : sight.city,
+                            state : sight.state,
+                            country : sight.country
+                        }
                     }
                 });
             }
@@ -69,9 +90,13 @@ Sighting.addSighting = function (sight, callback) {
             sighting.sight();
             sighting.save()
                 .then(() => callback(null, sighting) )
-                .catch((err) => callback(err, sighting) );
+                .catch(function(err) {
+                    callback(err, sighting)
+                });
         })
-        .catch((err) => callback(err, []));
+        .catch(function(err) {
+            callback(err, [])
+        });
 };
 
 Sighting.getQueryInLocation = function (country, state, city, pokemons, rarity) {
@@ -87,9 +112,10 @@ Sighting.getQueryInLocation = function (country, state, city, pokemons, rarity) 
     }
 
     if (pokemons){
-        if (pokemons instanceof Array)
-            query.pokemon = { $in : pokemons };
-        else 
+        if (pokemons instanceof Array) {
+            if (pokemons.length > 0)
+                query.pokemon = { $in : pokemons };
+        } else 
             query.pokemon = pokemons;
     }
 
@@ -117,9 +143,10 @@ Sighting.getQueryPokemonsCloser = function (coords, distance, pokemons, rarity) 
     };
 
     if (pokemons){
-        if (pokemons instanceof Array)
-            query.pokemon = { $in : pokemons };
-        else 
+        if (pokemons instanceof Array) {
+            if (pokemons.length > 0)
+                query.pokemon = { $in : pokemons };
+        } else 
             query.pokemon = pokemons;
     }
 

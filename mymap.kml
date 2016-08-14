@@ -139,6 +139,25 @@
 				</Point>
 			</Placemark>
 			<Placemark>
+				<name>Scyther</name>
+				<description><![CDATA[<img src="https://lh4.googleusercontent.com/proxy/m12C_tTJRwjAX9Av8qFtXeC41EyVd_JaSOIBGkNIbVTpN4oc1tIPk69FFDJoKck4TWrV1poaexfJKPoZqyfePpBjVdnfCZEZK2R5yWidV7co" height="200" width="auto" /><br><br>Número Pokemon: 123<br>Número Avistamentos: 1]]></description>
+				<styleUrl>#icon-1899-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='Número Pokemon'>
+						<value>123</value>
+					</Data>
+					<Data name='Número Avistamentos'>
+						<value>1.0</value>
+					</Data>
+					<Data name='gx_media_links'>
+						<value>https://lh4.googleusercontent.com/proxy/m12C_tTJRwjAX9Av8qFtXeC41EyVd_JaSOIBGkNIbVTpN4oc1tIPk69FFDJoKck4TWrV1poaexfJKPoZqyfePpBjVdnfCZEZK2R5yWidV7co</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-48.8022941,-26.3208686,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
 				<name>Horsea</name>
 				<description><![CDATA[Número Pokemon: 116<br>Número Avistamentos: 2]]></description>
 				<styleUrl>#icon-1899-DB4436</styleUrl>
