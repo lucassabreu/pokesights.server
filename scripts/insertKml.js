@@ -1,12 +1,12 @@
 require('dotenv').config({silent: true});
 var mongoose = require('mongoose');
-var Sighting = require("./models/Sighting");
+var Sighting = require("../models/Sighting");
 var xml2js = require('xml2js');
 var fs = require('fs');
-var PokemonInfo = require("./models/PokemonInfo");
+var PokemonInfo = require("../models/PokemonInfo");
 var parser = new xml2js.Parser();
 var util = require('util');
-var logger = require("./logger");
+var logger = require("../logger");
 
 var sightings = [];
 
@@ -31,7 +31,7 @@ PokemonInfo.load()
         mongoose.connect(process.env.OPENSHIFT_MONGODB_DB_URL)
             .then(function() {
 
-                fs.readFile(__dirname + '/../mymap.kml', function(err, data) {
+                fs.readFile(process.cwd() + '/resources/mymap.kml', function(err, data) {
                     parser.parseString(data, function (err, r) {
                         if (err)
                             console.log("inserting error ", err);
