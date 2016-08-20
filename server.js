@@ -3,8 +3,6 @@
 require('dotenv').config({silent : true});
 var express = require('express');
 var logger = require('./logger');
-var contentTypes = require('./utils/content-types');
-var sysInfo      = require('./utils/sys-info');
 
 var app = express();
 var openshift = express();
