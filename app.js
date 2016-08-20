@@ -11,16 +11,17 @@ var path = require('path');
 var logger = require('./logger');
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.OPENSHIFT_MONGODB_DB_URL || process.env.DSN_MONGO)
+mongoose.connect(process.env.OPENSHIFT_MONGODB_DB_URL)
   .then(() =>  logger.info('connection succesful...'))
   .catch((err) => logger.error(err));
 
-PokemonInfo.load(process.env.POKEMON_INFO_FILE)
-    .then(() => logger.info("Pokemon info loaded..."));
+PokemonInfo.load()
+    .then(() => logger.info("Pokemon info loaded..."))
+    .catch((err) => logger.error(err));
 
 module.exports.setup = function (app) {
 
-    var logDirectory = path.join(process.cwd(), process.env.LOG_FILE_DIR);
+    var logDirectory = path.join(process.cwd(), process.env.LOG_FILE_DIR || "./logs");
 
     // ensure log directory exists
     fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
@@ -32,7 +33,7 @@ module.exports.setup = function (app) {
         verbose: false
     })
 
-    app.use(morgan(process.env.MORGAN_LOG_FORMAT, { stream : accessLogStream }));
+    app.use(morgan(process.env.MORGAN_LOG_FORMAT || "combined", { stream : accessLogStream }));
 
     app.use(bodyParser.json()); // for parsing application/json
     app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded

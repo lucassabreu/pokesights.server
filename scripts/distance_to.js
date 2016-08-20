@@ -9,7 +9,7 @@ var parser = new xml2js.Parser();
 var sightings = [];
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DSN_MONGO)
+mongoose.connect(process.env.OPENSHIFT_MONGODB_DB_URL)
   .then(function() {
 
       var a = {                                                                                                                         

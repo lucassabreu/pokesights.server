@@ -13,18 +13,20 @@ var customColors = {
   fatal: 'red'
 };
 
+var log_file_dir = process.env.LOG_FILE_DIR || "./logs";
+
 var logger = new(winston.Logger)({
   colors: customColors,
   transports: [
     new(winston.transports.Console)({
-        level: process.env.CONSOLE_LOG_LEVEL,
+        level: process.env.CONSOLE_LOG_LEVEL || 'silly',
         colorize: true,
         timestamp: true
     }),
     new (winston.transports.File)({
-        level: process.env.FILE_LOG_LEVEL,
+        level: process.env.FILE_LOG_LEVEL || 'silly',
         maxside : 100 * 1024 * 1024, // 100 MB
-        filename: process.env.LOG_FILE_DIR + '/execution.log' 
+        filename: log_file_dir + '/execution.log' 
     })
   ]
 });

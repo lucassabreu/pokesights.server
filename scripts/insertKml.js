@@ -26,9 +26,9 @@ function insertSighting (s) {
 }
 
 mongoose.Promise = global.Promise;
-PokemonInfo.load(process.cwd() + process.env.POKEMON_INFO_FILE)
+PokemonInfo.load()
     .then (function () {
-        mongoose.connect(process.env.DSN_MONGO)
+        mongoose.connect(process.env.OPENSHIFT_MONGODB_DB_URL)
             .then(function() {
 
                 fs.readFile(__dirname + '/../mymap.kml', function(err, data) {

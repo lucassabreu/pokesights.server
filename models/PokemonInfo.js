@@ -40,6 +40,9 @@ PokemonInfo.prototype = {
 };
 
 PokemonInfo.load = function (filename) {
+
+    filename = filename || (process.cwd() + "/resources/pokemon_info.json");
+
     return new Promise(function(fullfill, reject) {
         fs.readFile(filename, function(err, data) {
             if (err) return reject(new Error(err));
