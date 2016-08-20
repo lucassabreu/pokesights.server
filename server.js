@@ -1,7 +1,7 @@
 #!/bin/node
 'use strict';
 
-require('dotenv').config();
+require('dotenv').config({silent : true});
 var express = require('express');
 var logger = require('./logger');
 
