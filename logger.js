@@ -1,7 +1,5 @@
 // origin : https://gist.github.com/rtgibbons/7354879
 
-console.log('even gets to here?');
-
 var winston = require('winston');
 var _ = require('lodash');
 
