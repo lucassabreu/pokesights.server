@@ -1,3 +1,4 @@
+#!/bin/env node
 'use strict';
 
 require('dotenv').config();
@@ -11,6 +12,6 @@ require('./app.js').setup(app);
 
 server.use("/api/v1", app);
 
-server.listen(process.env.SERVER_PORT, function () {
+server.listen(process.env.OPENSHIFT_NODEJS_PORT || process.env.SERVER_PORT, function () {
     logger.info('ready...');
 });

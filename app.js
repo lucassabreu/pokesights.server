@@ -11,7 +11,7 @@ var path = require('path');
 var logger = require('./logger');
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DSN_MONGO)
+mongoose.connect(process.env.OPENSHIFT_MONGODB_DB_URL || process.env.DSN_MONGO)
   .then(() =>  logger.info('connection succesful...'))
   .catch((err) => logger.error(err));
 
