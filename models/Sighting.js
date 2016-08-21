@@ -35,7 +35,7 @@ var SightingSchema = mongoose.Schema ({
 
 SightingSchema.index({ loc : '2dsphere' });
 
-SightingSchema.methods.getConfiabilty = function () {
+SightingSchema.methods.getConfiability = function () {
     if (this.history == null)
         return 0;
 
