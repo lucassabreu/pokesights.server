@@ -54,10 +54,11 @@ router.get ("/geo-code", function (req, res, next) {
         distance : distance * 1000, // km to meters
         pokemons : pokemons,
         rarity : rarity,
-        fields : {
-            history : false,
-        }
     }).then(function(sightings) {
+        for(var i in sightings) {
+            sightings[i].confiability = sightings[i].getConfiability();
+            sightings[i].history = undefined;
+        }
         res.json(sightings);
     }).catch((err) => next(err));
 
@@ -84,10 +85,11 @@ router.get ("/loc-name", function (req, res, next) {
         city : filter.city,
         pokemons : pokemons,
         rarity : rarity,
-        fields : {
-            history : false,
-        }
     }).then(function(sightings) {
+        for(var i in sightings) {
+            sightings[i].confiability = sightings[i].getConfiability();
+            sightings[i].history = undefined;
+        }
         res.json(sightings);
     }).catch((err) => next(err));
 
@@ -112,6 +114,7 @@ router.post ("/", upload.array(), function(req, res, next) {
 
     Sighting.addSighting(sight)
         .then(function(sighting) {
+            sighting.confiability = sighting.getConfiability();
             sighting.history = undefined;
             res.json(sighting)
         })
@@ -128,6 +131,7 @@ router.get ("/:id", function (req, res, next) {
                 message : "This sighting does not exist !"
             });
 
+        sighting.confiability = sighting.getConfiability();
         res.json(sighting);
     });
 });
@@ -144,6 +148,7 @@ router.put ("/:id/sight", function(req, res, next) {
 
         sighting.sight()
             .then (function(sighting) {
+                sighting.confiability = sighting.getConfiability();
                 sighting.history = undefined;
                 res.json(sighting)
             })
@@ -163,6 +168,7 @@ router.put ("/:id/unsight", function(req, res, next) {
 
         sighting.unsight()
             .then (function(sighting) {
+                sighting.confiability = sighting.getConfiability();
                 sighting.history = undefined;
                 res.json(sighting)
             })

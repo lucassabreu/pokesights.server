@@ -35,6 +35,25 @@ var SightingSchema = mongoose.Schema ({
 
 SightingSchema.index({ loc : '2dsphere' });
 
+SightingSchema.methods.getConfiabilty = function () {
+    if (this.history == null)
+        return 0;
+
+    var pro = 0, con = 0;
+    var today = new Date();
+    var validHis = this.history.filter(function (h) {
+        return Math.round((today - v.when) / (1000 * 60 * 60 * 24)) <= 30;
+    });
+    for(var key in validHis) {
+        if (validHis[key].seen)
+            pro++;
+        else
+            con++;
+    }
+
+    return pro / (con + pro);
+};
+
 SightingSchema.methods.sight = function () {
     var self = this;
     return new Promise(function (fullfill, reject) {
