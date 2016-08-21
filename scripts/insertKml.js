@@ -46,8 +46,8 @@ PokemonInfo.load()
                                         pokemon : placemarks[p].ExtendedData[0].Data[0].value[0],
                                         lat : parseFloat(placemarks[p].Point[0].coordinates[0].split(',')[1]),
                                         lng : parseFloat(placemarks[p].Point[0].coordinates[0].split(',')[0]),
-                                        country: "Brasil",
-                                        state: "SC",
+                                        country: "BR",
+                                        state: "State of Santa Catarina",
                                         city: "Joinville",
                                     });
                                 }
