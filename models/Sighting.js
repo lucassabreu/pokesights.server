@@ -42,7 +42,7 @@ SightingSchema.methods.getConfiability = function () {
     var pro = 0, con = 0;
     var today = new Date();
     var validHis = this.history.filter(function (h) {
-        return Math.round((today - v.when) / (1000 * 60 * 60 * 24)) <= 30;
+        return Math.round((today - h.when) / (1000 * 60 * 60 * 24)) <= 30;
     });
     for(var key in validHis) {
         if (validHis[key].seen)
