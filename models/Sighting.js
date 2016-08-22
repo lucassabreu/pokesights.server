@@ -12,6 +12,7 @@ var lock = new ReadWriteLock();
 var SightingSchema = mongoose.Schema ({
     pokemon : String,
     rarity : Number,
+    confiability : Number,
     loc: {
         type: { type : String, default : "Point" },
         coordinates : [],
@@ -44,6 +45,7 @@ SightingSchema.methods.getConfiability = function () {
     var validHis = this.history.filter(function (h) {
         return Math.round((today - h.when) / (1000 * 60 * 60 * 24)) <= 30;
     });
+
     for(var key in validHis) {
         if (validHis[key].seen)
             pro++;
@@ -51,7 +53,10 @@ SightingSchema.methods.getConfiability = function () {
             con++;
     }
 
-    return pro / (con + pro);
+    if ((con + pro) < 15)
+        con += pro; // to decrease when new
+
+    return parseFloat(pro) / parseFloat(con + pro);
 };
 
 SightingSchema.methods.sight = function () {
@@ -75,6 +80,7 @@ SightingSchema.methods.sight = function () {
                         PokemonInfo.Pokemons[self.pokemon].name 
                     )
                 );
+                self.confiability = self.getConfiability();
                 self.save()
                     .then(function(sighting) {
                         release();
@@ -102,6 +108,7 @@ SightingSchema.methods.unsight = function () {
                     when : self.lastTimeUnsight,
                     seen : false,
                 });
+                self.confiability = self.getConfiability();
                 logger.debug(
                     util.format(
                         "Sigthing %s not confirmmed for pokemon %s - %s", 

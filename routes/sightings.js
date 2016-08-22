@@ -56,8 +56,10 @@ router.get ("/geo-code", function (req, res, next) {
         rarity : rarity,
     }).then(function(sightings) {
         for(var i in sightings) {
+            logger.info(sightings[i]._id + ", c: " + sightings[i].getConfiability());
             sightings[i].confiability = sightings[i].getConfiability();
             sightings[i].history = undefined;
+            logger.debug(JSON.stringify(sightings[i]));
         }
         res.json(sightings);
     }).catch((err) => next(err));
@@ -149,7 +151,6 @@ router.put ("/:id/sight", function(req, res, next) {
         sighting.sight()
             .then (function(sighting) {
                 sighting.confiability = sighting.getConfiability();
-                sighting.history = undefined;
                 res.json(sighting)
             })
             .catch((err) => next(err));
@@ -169,7 +170,6 @@ router.put ("/:id/unsight", function(req, res, next) {
         sighting.unsight()
             .then (function(sighting) {
                 sighting.confiability = sighting.getConfiability();
-                sighting.history = undefined;
                 res.json(sighting)
             })
             .catch((err) => next(err));
