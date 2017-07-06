@@ -6,4 +6,4 @@ That data could be used to identify "Pokemon Nests" based on the number of sight
 
 ## Documentation
 
-[click here](https://documenter.getpostman.com/collection/view/69638-15418f6c-7a56-c96d-7d88-da97676191e5)
+[click here](https://documenter.getpostman.com/view/69638/pokesightings/6fWyj8f)
