@@ -20,7 +20,7 @@
     "express": "^4.14.0",
     "file-stream-rotator": "0.0.7",
     "lodash": "^4.15.0",
-    "mongoose": "^4.5.8",
+    "mongoose": "^5.7.8",
     "morgan": "^1.7.0",
     "multer": "^1.2.0",
     "rwlock": "^5.0.0",
